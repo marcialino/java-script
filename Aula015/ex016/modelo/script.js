@@ -14,7 +14,8 @@ function contar(){
         pas = Number(pas.value)
 
         if(pas <= 0){
-            window.alert(`Passo inválido!`)
+        window.alert(`Passo inválido!`)
+            
         }
 
         if(n1< n2){
