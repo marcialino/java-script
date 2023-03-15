@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do Conversor de Medidas</title>
+</head>
+<body>
+    <header>
+        <h1>Conversor de Medidas</h1>
+    </header>
+
+    <div><input type="button" value="Converter valor" name="btn" id="btn" onclick="clicar()">
+    
+        <div id="res">
+            <p>Clique no botão acima para iniciar</p>
+        </div>
+      
+    </div>
+</body>
+
+<script>
+    function clicar(){
+        var btn = window.document.getElementById('btn')
+        
+       var medida = Number(window.prompt('Digite uma distância em metros (m)'))
+
+       var med = (medida.toString().replace(".", ","))
+
+       var res = window.document.getElementById('res')
+
+       res.innerHTML =  (`A distância de ${med} metros, corresponde a...<br/>
+       ${med*0.001} quilômetros (Km)<br/>
+       ${med*100} centrímetro (cm) `)
+    }
+
+</script>
+</html>
