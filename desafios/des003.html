@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Antes e Depois</title>
+</head>
+<body>
+    <header>
+        <h1>Antes e depois</h1>
+    </header>
+
+    <div>
+        <input type="button" value="Antecessor e Sucessor" name="btn" id="btn" onclick="clicar()">
+    </div>
+</body>
+<script>
+    function clicar(){
+    var b = window.document.getElementById('btn')
+    var n = Number.parseInt(window.prompt('Insira um número inteiro'))
+    window.alert(`Antes de ${n}, temos o número ${n-1}. \n Depois de ${n} temos o número ${n+1}.`)
+    
+    }
+</script>
+</html>
