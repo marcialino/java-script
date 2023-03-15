@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando o Troco</title>
+    <style>
+        input#btn{
+            background-color: rgba(128, 128, 128, 0.344);
+            padding: 15px;
+            font: normal 12pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calculando o Troco</h1>
+    </header>
+
+    <div><input type="button" value="Comprar Produto" name="btn" id="btn" onclick="clicar()"></div>
+    
+</body>
+
+<script>
+    function clicar(){
+        var prod = window.prompt('Qual produto você está comprando?')
+               
+       var preco =  Number(window.prompt(`Quanto custa o ${prod} que você está comprando?`))
+
+       var preform = preco.toLocaleString('pt-br', {style:'currency', currency:'BRL'})
+
+               
+       var valor = Number(window.prompt(`Qual o valor que você deu para pagar o ${prod} ?`))
+
+       var valform = valor.toLocaleString('pt-br', {style:'currency', currency:'BRL'})
+
+       var troco = Number(valor - preco)
+       var troform = troco.toLocaleString('pt-br', {style:'currency', currency:'BRL'})
+
+        window.alert(`Você comprou ${prod} que custou ${preform}. \n Você deu ${valform} em dinheiro e vai receber ${troform} de troco. \n Volte sempre!`)
+    }
+</script>
+</html>
