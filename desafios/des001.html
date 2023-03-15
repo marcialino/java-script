@@ -11,31 +11,21 @@
     <header>
         <h1>Desafio das Mensagens</h1>
     </header>
-    <section>
-        <p>
-            <input type="button" value="Botão 1" name="bts1" id="bts1" onclick="clicar()">   
-            <input type="button" value="Botão 2" name="bts2" id="bts2" onclick="clicar()">  
-            <input type="button" name="bts3" id="bts3" onclick="clicar()" value="Botão 3">
-
-        </p>
-    </section>
-
-    <script>
-        function clicar(){
-            var bts1 = window.document.getElementById('bts1')
-            var bts2 = window.document.getElementById('bts2')
-            var bts3 = window.document.getElementById('bts3')
+    
+    
+        <div>
+            <input type="button" value="Botão 1" onclick="alert('Você clicou no Botão 1')" >
            
-            if(bts1){
-                window.alert('Você clicou no Botão 1')
-            }else if(bts2 ){
-                window.alert('Você clicou no Botão 2')
-            }else{
-                Window.alert('Você clicou no Botão 3')
-            }
-        }
+        </div>
 
-    </script>
-       
+        <div>
+           <input type="button" value="Botão 2" onclick="alert('Você clicou no Botão 2')">
+        </div>
+
+        <div>
+            <input type="button" value="Botão 3" onclick="alert('Você clicou no Botão 3')">
+        </div>
+           
+        
 </body>
 </html>

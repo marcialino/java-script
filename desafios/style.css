@@ -4,3 +4,6 @@ input{
    padding: 15px;
    
 }
+div{
+   display: inline;
+}
