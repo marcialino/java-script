@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio de Bhaskara</title>
+
+    <style>
+        input#btn{
+            font: normal 12pt Arial;
+            padding: 15px;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        div#res{
+            font: normal 13pt Arial;
+            margin-left:15px;
+            margin-top: 10px;
+        }
+
+        p{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Resolvendo Bhaskara</h1></header>
+
+    <div><input type="button" value="Calcular" name="btn" id="btn" onclick="clicar()"></div>
+
+    <div id="res">
+        <p>Considerando uma equação no formato ax<sup>2</sup> +bx + c = 0, aperte o botão acima para calcular o valor de &#x0394;.</p>
+    </div>
+</body>
+
+<script>
+    function clicar(){
+        var a = Number(window.prompt('Qual é o valor de a?'))
+
+        var b = Number(window.prompt('Qual é o valor de b?'))
+
+        var c = Number(window.prompt('Qual é o valor de c?'))
+
+        var delta = (b*b)-(4*a*c)
+
+        var res = window.document.getElementById('res')
+
+        res.innerHTML = `A equação atual é ${a}x<sup>2</sup> + ${b}x + ${c} = 0 <br/>
+        O cálculo realizado será &#x0394; = ${b}<sup>2</sup> - 4 . ${a}. ${c}. <br/>
+        O valor calculado foi &#x0394 = ${delta} `
+    }
+</script>
+</html>
