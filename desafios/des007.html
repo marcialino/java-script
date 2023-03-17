@@ -5,6 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio do conversor de moedas R$ -> US$</title>
+    <style>
+        input#conv{
+            background-color: rgba(128, 128, 128, 0.419);
+            font: normal 12pt Arial;
+            font-weight: bold;
+            padding: 15px;
+            margin-left: 10px;
+            padding-bottom: 20px;
+        }
+        div#res{
+            font: normal 14pt Arial;
+            padding: 15px;
+            margin-top: 20px;
+            
+        }
+
+        p{
+            font-weight: bold;
+        }
+    
+    
+    
+    </style>
 </head>
 <body>
     <header><h1>Conversor R$ &#x27A1; US$</h1></header>
@@ -25,13 +48,13 @@
 
         var conv  = real/dol
 
-        /*var convf = conv.toLocaleString('pt-br', { style: 'currency',currency:'BRL'})
+        var convf = conv.toLocaleString('en-US', { style: 'currency',currency:'USD'} )
 
-        var convv = convf.toFixed(2)
+        /*var convv = convf.toFixed(2)*/
         
-        var res = window.document.getElementById('res')*/
+        var res = window.document.getElementById('res')
 
-        res.innerHTML = `Você tem ${realf}. Com esse valor você consegue comprar ${conv}`
+        res.innerHTML = `Você tem ${realf}. Com esse valor você consegue comprar ${convf} dólares`
     }
 </script>
 </html>
