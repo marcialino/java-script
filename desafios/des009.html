@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio reajuste salarial</title>
+</head>
+<body>
+    <header><h1>Reajuste Salarial</h1></header>
+
+    <div><input type="button" value="Reajustar Salárial" name="reaj" id="reaj" onclick="clicar()"></div>
+
+    <div id="res">
+        <p>Clique no botão acima para iniciar</p>
+    </div>
+</body>
+
+<script>
+    function clicar(){
+
+        var nome = window.prompt('Qual é o nome do funcionário? ')
+
+        var sal = Number(window.prompt(`Qual é o salário de ${nome}?`))
+
+        var salfor = sal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'} )
+
+        var reajuste = Number(window.prompt(`O salário de ${nome} será reajustado com qual percentual?` ))
+
+        var valrea = sal*reajuste
+        var valreaform = valrea.toLocaleString('pt-br', {style:'currency', currency: 'BRL'})
+        var salrea = sal+(sal*reajuste)
+
+        var salreform = salrea.toLocaleString('pt-br',{style: 'currency', currency:'BRL'})
+
+        var res = window.document.getElementById('res')
+
+        res.innerHTML = `${nome} recebeu um aumento salarial! <br/>
+        O salário atual era de ${salfor}.
+        Com um aumento de ${reajuste}%, o salário vai aumentar ${valreaform} no próximo mês;<br/>
+        E a partir daí, ${nome} vai passar a ganhar ${salreform}. `
+    }
+</script>
+</html>
