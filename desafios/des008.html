@@ -5,8 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio desconto de 10%</title>
+    <style>
+        input#prod{
+            font: normal 12pt Arial;
+            padding: 15px;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        div#res{
+            font: normal 14pt Arial;
+            margin-left: 15px;
+            padding: 15px;
+        }
+
+     
+    </style>
 </head>
 <body>
     <header><h1>Calcular Desconto</h1></header>
+
+    <div><input type="button" value="Desconto de 10%" name="prod" id="prod" onclick="clicar()"></div>
+
+    <div id="res">
+        <p>Clique no botão acima para iniciar!</p>
+    </div>
 </body>
+
+<script>
+    function clicar(){
+        
+        var prod = window.prompt('Qual o produto que você está comprando?')
+
+        var preco = Number(window.prompt(`Qual o preço do ${prod}? `))
+
+        var preform = preco.toLocaleString('pt-br',{style: 'currency', currency:'BRL'})
+
+        var des = preco*0.10
+        var desfor = des.toLocaleString('pt-br',{style:'currency', currency:'BRL'})
+
+        var pag = preco - des
+        var pagform = pag.toLocaleString('pt-br', {style: 'currency', currency:'BRL'})
+
+         var res = window.document.getElementById('res')
+
+        res.innerHTML = `<strong>Calculando desconto de 10% para ${prod}:<br/><br/br></strong>
+        O preço original era de ${preform};<br/>
+        Você acaba de ganhar ${desfor} de desconto (-10%);<br/>
+        No fim, você vai pagar ${pagform} no produto ${prod}.`
+    }
+</script>
 </html>
