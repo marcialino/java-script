@@ -5,11 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio reajuste salarial</title>
+    <style>
+        input#reaj{
+            font: normal 12pt Arial;
+            font-weight: bold;
+            padding: 15px;
+            margin-left: 15px;
+        }
+
+        div#res{
+            font: normal 13pt Arial;
+            padding: 15px;
+        }
+
+        p{
+            font-weight: bold ;
+            
+        }
+    </style>
 </head>
 <body>
     <header><h1>Reajuste Salarial</h1></header>
 
-    <div><input type="button" value="Reajustar Salárial" name="reaj" id="reaj" onclick="clicar()"></div>
+    <div><input type="button" value="Reajustar Salário" name="reaj" id="reaj" onclick="clicar()"></div>
 
     <div id="res">
         <p>Clique no botão acima para iniciar</p>
@@ -27,16 +45,16 @@
 
         var reajuste = Number(window.prompt(`O salário de ${nome} será reajustado com qual percentual?` ))
 
-        var valrea = sal*reajuste
+        var valrea = sal*reajuste/100
         var valreaform = valrea.toLocaleString('pt-br', {style:'currency', currency: 'BRL'})
-        var salrea = sal+(sal*reajuste)
+        var salrea = sal+ valrea
 
         var salreform = salrea.toLocaleString('pt-br',{style: 'currency', currency:'BRL'})
 
         var res = window.document.getElementById('res')
 
-        res.innerHTML = `${nome} recebeu um aumento salarial! <br/>
-        O salário atual era de ${salfor}.
+        res.innerHTML = `<strong>${nome} recebeu um aumento salarial!<br/><br/></strong>
+        O salário atual era de ${salfor};<br/>
         Com um aumento de ${reajuste}%, o salário vai aumentar ${valreaform} no próximo mês;<br/>
         E a partir daí, ${nome} vai passar a ganhar ${salreform}. `
     }
