@@ -5,6 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A situação de um aluno</title>
+
+    <style>
+        input#btn{
+            font: normal 12pt Arial;
+            font-weight: bold;
+            padding: 15px;
+            margin-left: 15px;
+        }
+        div#res{
+            font: normal 14pt Arial;
+            padding: 15px;
+            margin-left: 15px;
+        }
+        p{
+            font-weight: bold;
+        }
+
+    </style>
+
 </head>
 <body>
     <header><h1>Situação do aluno</h1></header>
@@ -22,9 +41,35 @@
 
         var nota1 = Number(window.prompt(`Primeira nota de ${nome}`))
 
+        var nota1f = nota1.toString().replace(".", ",")
+
         var nota2 = Number(window.prompt(`Segunda nota de ${nome}`))
 
+        var nota2f = nota2.toString().replace(".", ",")
+
+        var med = (nota1+ nota2)/2
+        var medf = med.toString().replace(".", ",")
+
         var res = window.document.getElementById('res')
+
+        if(med < 3){
+            res.innerHTML = `<strong> Analisando a situação de ${nome}</strong><br/><br/>
+            Com as notas ${nota1f} e ${nota2f}, a <strong>média é ${medf}</strong><br/>
+            Com média abaixo de 3,0, ${nome} está <mark style="background-color:#F5603D; color:#ffffff";>REPROVADO(A)</mark>. <br/>
+            `
+        }else if(med > 3 && med < 6){
+            res.innerHTML = `<strong> Analisando a situação de ${nome}</strong> <br/> <br/>
+            Com as notas ${nota1f} e ${nota2f}, a <strong> média é ${medf}</strong><br/>
+            Com média entre 3,0 e 6,0 ${nome} está em <mark style="background-color:#FBEFFE;color:#F5B42A";>RECUPERAÇÃO</mark>.<br/>`
+
+        }else{
+            res.innerHTML = `<strong> Analisando a situação de ${nome}</strong> <br/> <br/>
+            Com as notas ${nota1f} e ${nota2f}, a <strong>média é ${medf}</strong><br/>
+            Com média acima de 6,0, ${nome} está <mark style="background-color:#4FF966; color:#000000";>APROVADO(A)</mark>. <br/>
+            `
+
+        }
+
     }
 </script>
 </html>
