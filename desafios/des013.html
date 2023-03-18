@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A situação de um aluno</title>
+</head>
+<body>
+    <header><h1>Situação do aluno</h1></header>
+    <div><input type="button" value="Entrar com as notas" name="btn" id="btn" onclick="clicar()"></div>
+
+    <div id="res">
+        <p>Clique no botão acima para informar as notas do aluno.</p>
+    </div>
+</body>
+
+<script>
+    function clicar(){
+
+        var nome = window.prompt('Qual é o nome do aluno?')
+
+        var nota1 = Number(window.prompt(`Primeira nota de ${nome}`))
+
+        var nota2 = Number(window.prompt(`Segunda nota de ${nome}`))
+
+        var res = window.document.getElementById('res')
+    }
+</script>
+</html>
