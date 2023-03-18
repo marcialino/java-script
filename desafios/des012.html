@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço antes, preço depois</title>
+
+    <style>
+        input#btn{
+            font: normal 12pt Arial;
+            font-weight: bold;
+            padding: 15px;
+            margin-left: 15px;
+        }
+
+        div#res{
+            font: normal 14pt Arial;
+            padding: 10px;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Preço mudou</h1></header>
+
+    <div><input type="button" value="Verificar" name="btn" id="btn" onclick="clicar()"></div>
+
+    <div id="res">
+        <p>Clique no botão acima para analisar a mudança de preço.</p>
+    </div>
+
+</body>
+<script>
+    function clicar(){
+        var prec = Number(window.prompt('Qual era o preço anterior do produto?'))
+
+        var precat = Number(window.prompt('Qual é o preço atual do produto?'))
+
+        var res = window.document.getElementById('res')
+
+        var precform = prec.toLocaleString('pt-br', {style:'currency', currency:'BRL'})
+
+    
+        var precatform = precat.toLocaleString('pt-br', {style:'currency', currency:'BRL'})
+
+        var difpre =  precat - prec
+        var difpreabs = Math.abs(difpre)
+        var difpreabsform = difpreabs.toLocaleString('pt-br', {style:'currency', currency:'BRL'})
+      
+
+        var perc = difpre*100/prec
+       var percabs = Math.abs(perc)
+       var percfinal = percabs.toFixed(0)
+
+     
+        
+        if (prec < precat){
+        
+            res.innerHTML = `<strong>Analisando os valores informados. </strong><br/br></>
+            O produto custava ${precform} e agora custa ${precatform}. <br/>
+            Hoje o produto está mais caro.<br/>
+            O preço aumentou ${difpreabsform} em relação ao preço anterior.
+            Uma variação de ${percfinal} % para cima.`
+        }else{
+            res.innerHTML = `O produto custava ${precform} e agora custa ${precatform}. <br/>
+            Hoje o produto está mais barato.<br/>
+            O preço caiu ${difpreabsform} em relação ao preço anterior.
+            Uma variação de ${percfinal} % para baixo.`
+        }
+       
+    }
+</script>
+
+</html>
