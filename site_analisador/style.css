@@ -1,0 +1,30 @@
+body{
+    background-color: #bb8038a1;
+}
+header{
+    text-align: center;
+    color: white;
+}
+section{
+    background-color:#ac2105d4 ;
+    width: 500px;
+    font: normal 12pt Arial;
+    color: white;
+    margin: auto;
+    padding:15px;
+}
+div#res{
+    padding: 15px;
+}
+input#btn{
+    font: normal 12pt Arial;
+}
+input#fim{
+    font: normal 12pt Arial;
+}
+footer{
+    font: normal 14pt Arial;
+    color: white;
+    font-style: italic;
+    text-align: center;
+}
