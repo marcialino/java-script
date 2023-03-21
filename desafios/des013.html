@@ -53,14 +53,14 @@
         var res = window.document.getElementById('res')
 
         if(med < 3){
-            res.innerHTML = `<strong> Analisando a situação de ${nome}</strong><br/><br/>
+            res.innerHTML = `Analisando a situação de ${nome}
             Com as notas ${nota1f} e ${nota2f}, a <strong>média é ${medf}</strong><br/>
             Com média abaixo de 3,0, ${nome} está <mark style="background-color:#F5603D; color:#ffffff";>REPROVADO(A)</mark>. <br/>
             `
         }else if(med > 3 && med < 6){
             res.innerHTML = `<strong> Analisando a situação de ${nome}</strong> <br/> <br/>
             Com as notas ${nota1f} e ${nota2f}, a <strong> média é ${medf}</strong><br/>
-            Com média entre 3,0 e 6,0 ${nome} está em <mark style="background-color:#FBEFFE;color:#F5B42A";>RECUPERAÇÃO</mark>.<br/>`
+            Com média entre 3,0 e 6,0,  ${nome} está em <mark style="background-color:#FBEFFE;color:#F5B42A";>RECUPERAÇÃO</mark>.<br/>`
 
         }else{
             res.innerHTML = `<strong> Analisando a situação de ${nome}</strong> <br/> <br/>
